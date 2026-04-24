@@ -1,0 +1,13 @@
+# Video & audio files — giữ repo nhẹ, không commit media
+input/*
+output/*
+!input/.gitkeep
+!output/.gitkeep
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
