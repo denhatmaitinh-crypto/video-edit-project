@@ -1,0 +1,63 @@
+STT,Nhóm,Câu hỏi / Tình huống,Câu trả lời mẫu,Trạng thái duyệt,Ghi chú của sếp
+1,Câu chào,Câu chào mở đầu (khi khách nhắn lần đầu),"Dạ xin chào anh/chị! Em có thể hỗ trợ anh/chị vấn đề gì ạ?",Chờ duyệt,
+2,Câu chào,Khách chào lại / hỏi thăm,"Dạ em chào anh/chị ạ. Em nghe anh/chị.",Chờ duyệt,
+3,Câu chào,Hỏi tên khách để xưng hô,"Dạ cho em xin phép hỏi tên anh/chị để em tiện xưng hô ạ.",Chờ duyệt,
+4,Cảm ơn,Cảm ơn khi khách liên hệ,"Em cảm ơn anh/chị đã liên hệ với bên em ạ.",Chờ duyệt,
+5,Cảm ơn,Cảm ơn khi khách kiên nhẫn chờ,"Em cảm ơn anh/chị đã vui lòng chờ ạ.",Chờ duyệt,
+6,Cảm ơn,Cảm ơn khi khách phản hồi/góp ý,"Em cảm ơn anh/chị đã chia sẻ. Thông tin của anh/chị rất quý giá với bên em.",Chờ duyệt,
+7,Xin lỗi,Xin lỗi chung khi có bất tiện,"Em xin lỗi anh/chị về sự bất tiện này ạ.",Chờ duyệt,
+8,Xin lỗi,Xin lỗi khi chưa hiểu ý khách,"Xin lỗi anh/chị, em chưa hiểu rõ ý. Anh/chị có thể nói rõ hơn giúp em được không ạ?",Chờ duyệt,
+9,Xin lỗi,Xin lỗi khi sai sót/nhầm lẫn,"Em rất xin lỗi về sai sót này ạ. Em sẽ kiểm tra và xử lý ngay cho anh/chị.",Chờ duyệt,
+10,Xin lỗi,Xin lỗi khi không hỗ trợ được,"Em xin lỗi, yêu cầu này hiện em chưa thể hỗ trợ trực tiếp. Em xin phép chuyển tới bộ phận phụ trách và phản hồi lại anh/chị sớm nhất ạ.",Chờ duyệt,
+11,Xin lỗi,Xin lỗi ngoài giờ làm việc,"Hiện tại đã ngoài giờ làm việc của bên em ạ. Em sẽ liên hệ lại với anh/chị ngay đầu giờ làm việc. Mong anh/chị thông cảm.",Chờ duyệt,
+12,Hỗ trợ,Xin khách chờ trong lúc kiểm tra,"Anh/chị vui lòng giữ máy/chờ em một chút để em kiểm tra thông tin ạ.",Chờ duyệt,
+13,Hỗ trợ,Xác nhận đã hiểu yêu cầu,"Dạ em đã nắm rõ yêu cầu của anh/chị ạ. Em xử lý ngay.",Chờ duyệt,
+14,Kết thúc,Hỏi khách có cần gì thêm,"Anh/chị còn cần em hỗ trợ thêm vấn đề gì nữa không ạ?",Chờ duyệt,
+15,Kết thúc,Câu tạm biệt,"Em cảm ơn anh/chị rất nhiều. Chúc anh/chị một ngày làm việc hiệu quả ạ!",Chờ duyệt,
+16,Q&A đã trả lời,Tôi muốn edit 1 video có trong máy thì bắt đầu từ đâu?,"Gồm 4 bước: (1) Cài FFmpeg bằng brew install ffmpeg. (2) Clone repo về máy. (3) Copy video vào thư mục input/. (4) Chạy script phù hợp trong scripts/. Xem chi tiết trong scripts/README.md.",Chờ duyệt,
+17,Q&A đã trả lời,Làm sao lấy đường dẫn file trên Mac?,"3 cách: (1) Kéo thả file từ Finder vào Terminal. (2) Click phải file, giữ Option, chọn ""Copy as Pathname"". (3) Chạy ls ~/Downloads để xem danh sách.",Chờ duyệt,
+18,Q&A đã trả lời,FFmpeg là gì? Cài như thế nào?,"FFmpeg là công cụ dòng lệnh miễn phí để xử lý video/audio. Cài trên macOS: brew install ffmpeg. Kiểm tra: ffmpeg -version.",Chờ duyệt,
+19,Q&A đã trả lời,Branch (nhánh) trong Git là gì?,"Branch là một bản sao độc lập của code, cho phép bạn làm việc mà không ảnh hưởng bản chính (main). Khi ổn rồi thì merge (gộp) vào main. Lệnh cơ bản: git branch, git checkout, git merge.",Chờ duyệt,
+20,Q&A đã trả lời,Push code lên GitHub thì làm sao?,"Dùng lệnh: git push -u origin <tên-branch>. Nếu chưa commit thì cần git add + git commit trước.",Chờ duyệt,
+21,Q&A đã trả lời,Bị lỗi 403 Permission denied khi push?,"Thường do GitHub App chưa được cài đủ quyền. Vào github.com/settings/installations → tab Installed GitHub Apps → Configure Claude → cấp quyền Read and write cho repo cần push.",Chờ duyệt,
+22,Q&A đã trả lời,Video đã edit nằm ở đâu?,"Tất cả kết quả nằm trong thư mục output/ của dự án trên máy local. AI không thể edit giùm vì AI không truy cập được file trên máy bạn và môi trường chạy của AI không có FFmpeg.",Chờ duyệt,
+23,Q&A đã trả lời,Clone repo về Mac như thế nào?,"cd ~/Desktop && git clone https://github.com/denhatmaitinh-crypto/video-edit-project.git && cd video-edit-project && git checkout claude/video-editing-guide-JVBHG",Chờ duyệt,
+24,Q&A đã trả lời,Các script trong scripts/ có chức năng gì?,"15 script: info (xem info), trim (cắt), compress (nén), resize (đổi kích thước), crop (cắt khung), rotate (xoay), speed (tăng/giảm tốc), concat (nối), convert (đổi định dạng), mute (bỏ tiếng), extract-audio (tách tiếng), watermark (chèn logo), subtitle-burn (ghi phụ đề), to-gif (thành GIF), thumbnail (trích ảnh). Xem scripts/README.md.",Chờ duyệt,
+25,Q&A đã trả lời,Làm sao cắt 1 đoạn video?,"./scripts/trim.sh input/video.mp4 output/cat.mp4 <start HH:MM:SS> <duration HH:MM:SS>. VD cắt từ giây 5, lấy 10 giây: trim.sh input/video.mp4 output/cat.mp4 00:00:05 00:00:10.",Chờ duyệt,
+26,Q&A đã trả lời,Làm sao nén video cho nhẹ?,"./scripts/compress.sh input/video.mp4 output/nen.mp4 [CRF=28]. CRF càng cao càng nhẹ (28-32 vẫn xem tốt, 18-23 chất lượng cao).",Chờ duyệt,
+27,Q&A đã trả lời,Làm sao resize video?,"./scripts/resize.sh input/video.mp4 output/720p.mp4 <width> <height>. Dùng -1 cho chiều tự tính theo tỉ lệ. VD xuống 720p: resize.sh input/video.mp4 output/720p.mp4 -1 720.",Chờ duyệt,
+28,Q&A đã trả lời,Làm sao làm GIF từ video?,"./scripts/to-gif.sh input/video.mp4 output/demo.gif [start] [duration] [fps] [width]. VD: to-gif.sh input/video.mp4 output/demo.gif 0 3 15 480.",Chờ duyệt,
+29,Q&A đã trả lời,Làm sao trích thumbnail?,"./scripts/thumbnail.sh input/video.mp4 output/thumb.jpg [time=00:00:01].",Chờ duyệt,
+30,Q&A đã trả lời,Làm sao tách audio từ video?,"./scripts/extract-audio.sh input/video.mp4 output/audio.mp3.",Chờ duyệt,
+31,Q&A đã trả lời,Làm sao chèn watermark/logo?,"./scripts/watermark.sh input/video.mp4 output/co-logo.mp4 assets/logo.png [position=br]. Vị trí: tl (trái-trên), tr (phải-trên), bl (trái-dưới), br (phải-dưới).",Chờ duyệt,
+32,Q&A đã trả lời,Làm sao burn phụ đề vào video?,"./scripts/subtitle-burn.sh input/video.mp4 output/co-sub.mp4 subtitle.srt. Phụ đề sẽ được ghi cứng vào hình.",Chờ duyệt,
+33,Q&A đã trả lời,Làm sao xoay video?,"./scripts/rotate.sh input/video.mp4 output/xoay.mp4 <90|180|270>.",Chờ duyệt,
+34,Q&A đã trả lời,Làm sao nối nhiều video?,"./scripts/concat.sh output/merged.mp4 input/a.mp4 input/b.mp4 input/c.mp4. Script tự động re-encode nếu các video khác codec.",Chờ duyệt,
+35,Q&A chưa có đáp án,Video của tôi quá nặng (>100MB), không up được lên Zalo/Tele?,,Cần duyệt,"Gợi ý: hướng dẫn dùng compress.sh với CRF 30+"
+36,Q&A chưa có đáp án,Làm sao xóa watermark có sẵn trong video?,,Cần duyệt,"Lưu ý pháp lý - chỉ dùng cho video mình sở hữu"
+37,Q&A chưa có đáp án,Tôi muốn thêm nhạc nền vào video thì làm thế nào?,,Cần duyệt,"Cần viết thêm script add-audio.sh"
+38,Q&A chưa có đáp án,Chuyển video dọc (TikTok/Reel) sang video ngang (YouTube)?,,Cần duyệt,"Dùng crop + padding. Cần script riêng?"
+39,Q&A chưa có đáp án,Export chất lượng cao nhất (lossless)?,,Cần duyệt,"Có nên dùng CRF 0 hay ProRes?"
+40,Q&A chưa có đáp án,Cắt bỏ 1 đoạn ở giữa video (ví dụ giây 30 đến giây 45)?,,Cần duyệt,"Cần script trim-middle.sh (trim + concat)"
+41,Q&A chưa có đáp án,Ghép video cũ với audio mới (thay tiếng),,Cần duyệt,"Cần script replace-audio.sh"
+42,Q&A chưa có đáp án,Stabilize video bị rung có làm được không?,,Cần duyệt,"FFmpeg vidstabdetect + vidstabtransform"
+43,Q&A chưa có đáp án,Color correction / chỉnh màu có làm được không?,,Cần duyệt,"Dùng eq, curves filter của FFmpeg"
+44,Q&A chưa có đáp án,Chia 1 video dài thành nhiều đoạn đều nhau,,Cần duyệt,"Cần script split.sh"
+45,Q&A chưa có đáp án,Thêm chữ/text overlay lên video,,Cần duyệt,"Dùng drawtext filter"
+46,Q&A chưa có đáp án,Xóa phông xanh (green screen/chroma key),,Cần duyệt,"Dùng chromakey filter"
+47,Q&A chưa có đáp án,Picture-in-picture (video nhỏ trong video lớn),,Cần duyệt,"Dùng overlay filter, cần script riêng"
+48,Q&A chưa có đáp án,Fade in / fade out đầu cuối video,,Cần duyệt,"Dùng fade filter"
+49,Q&A chưa có đáp án,Xử lý batch nhiều video cùng lúc,,Cần duyệt,"Cần viết batch wrapper script"
+50,Q&A chưa có đáp án,Lỗi codec không đọc được file (.mov, .mkv, .avi)?,,Cần duyệt,"Hướng dẫn convert.sh để đổi sang mp4"
+51,Q&A chưa có đáp án,Xử lý video HDR như thế nào?,,Cần duyệt,"HDR cần tone-mapping khi xuống SDR"
+52,Q&A chưa có đáp án,Tối ưu video cho Reels/TikTok/Shorts (tỷ lệ 9:16)?,,Cần duyệt,"1080x1920, bitrate 8Mbps, h264"
+53,Q&A chưa có đáp án,Thay đổi âm lượng audio trong video,,Cần duyệt,"Dùng volume filter"
+54,Q&A chưa có đáp án,Làm timelapse / slow motion chất lượng cao,,Cần duyệt,"Khác speed.sh - cần interpolation"
+55,Q&A chưa có đáp án,Loại bỏ tạp âm/noise trong audio,,Cần duyệt,"FFmpeg afftdn hoặc rnnoise"
+56,Q&A chưa có đáp án,Thêm hiệu ứng chuyển cảnh khi nối video,,Cần duyệt,"Dùng xfade filter thay vì concat"
+57,Q&A chưa có đáp án,Xuất nhiều định dạng cùng lúc (mp4 + webm),,Cần duyệt,"Multi-output trong 1 lần encode"
+58,Q&A chưa có đáp án,Watermark động (logo di chuyển / hiện biến mất),,Cần duyệt,"Overlay với enable=between(t,...)"
+59,Q&A chưa có đáp án,Ghép phụ đề mềm (softsub) thay vì ghi cứng,,Cần duyệt,"Dùng -c:s mov_text cho mp4"
+60,Q&A chưa có đáp án,Làm sao gỡ branch/thay đổi khi lỡ tay?,,Cần duyệt,"git reset, git revert - cần bài riêng"
+61,Q&A chưa có đáp án,Làm sao cộng tác với nhiều người trên cùng repo?,,Cần duyệt,"Pull Request flow"
+62,Q&A chưa có đáp án,AI có thể edit video giùm được không?,,Cần duyệt,"Câu trả lời: KHÔNG - AI chỉ viết script. Chỉ người dùng chạy được."
