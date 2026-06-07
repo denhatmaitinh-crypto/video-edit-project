@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<title>Scene mẫu</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1020;
+    font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: #fff;
+    overflow: hidden;
+  }
+  .stage { text-align: center; }
+  .ring {
+    width: 220px; height: 220px;
+    margin: 0 auto 40px;
+    border-radius: 50%;
+    border: 10px solid rgba(255,255,255,0.12);
+    border-top-color: #4f8cff;
+    animation: spin 1.2s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  h1 {
+    font-size: 64px;
+    margin: 0;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #4f8cff, #a96bff, #4f8cff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { to { background-position: 200% center; } }
+  p { opacity: 0.7; font-size: 22px; margin-top: 16px; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="ring"></div>
+    <h1>HTML → Video</h1>
+    <p>Render bằng Puppeteer + FFmpeg</p>
+  </div>
+</body>
+</html>

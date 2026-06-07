@@ -1,0 +1,20 @@
+{
+  "name": "video-edit-project",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Công cụ chỉnh sửa và tạo video bằng FFmpeg. Bao gồm renderer HTML→video dùng Puppeteer (Chrome headless) + FFmpeg.",
+  "scripts": {
+    "render": "node scripts/html-to-video.mjs",
+    "example": "bash scripts/render-example.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0"
+  }
+}
