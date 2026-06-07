@@ -1,0 +1,14 @@
+# Kết quả render & file tạm
+/output/*
+!/output/.gitkeep
+studio/renders/
+
+# Dependencies
+node_modules/
+
+# Cache công cụ
+.cache/
+*.log
+
+# OS
+.DS_Store
