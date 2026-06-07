@@ -73,6 +73,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Fraunces',serif;}
 
 > Heading dùng **viết hoa chuẩn tiếng Việt** (không Title Case kiểu Anh).
 
+> ⚠️ **Tiếng Việt cho video/HyperFrames:** Fraunces hỗ trợ đầy đủ tiếng Việt (có subset vietnamese). **DM Sans KHÔNG render được tiếng Việt có dấu** (thiếu khối glyph U+1EA0–U+1EF1: ự, ế, ị, ờ, ạ...). Khi dựng video có chữ Việt ở vai trò sans, dùng **Be Vietnam Pro** thay cho DM Sans (humanist sans, thiết kế cho tiếng Việt, cảm giác gần DM Sans). Trên web (WordPress) thì DM Sans vẫn dùng theo design system; ràng buộc này chỉ áp dụng khi cần nhúng glyph cho render.
+
 ## 4. Spacing & layout
 
 - Section padding: 80px trên/dưới · 40px trái/phải

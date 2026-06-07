@@ -1,205 +1,401 @@
 <!doctype html>
-<html lang="en" data-resolution="landscape">
+<html lang="vi" data-resolution="landscape">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swiss Grid - Hyperframes</title>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <title>Để AI Tính — Intro</title>
+    <script src="gsap.min.js"></script>
     <style>
-      body,
-      html {
+      /* ---------- Fonts (local woff2, includes Vietnamese subset) ---------- */
+      @font-face{font-family:'Fraunces';font-style:normal;font-weight:300 700;font-display:block;src:url('fonts/fraunces-vietnamese-300-700.woff2') format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}
+      @font-face{font-family:'Fraunces';font-style:normal;font-weight:300 700;font-display:block;src:url('fonts/fraunces-latin-ext-300-700.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Fraunces';font-style:normal;font-weight:300 700;font-display:block;src:url('fonts/fraunces-latin-300-700.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url('fonts/bevietnampro-vietnamese-400.woff2') format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url('fonts/bevietnampro-latin-ext-400.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:400;font-display:block;src:url('fonts/bevietnampro-latin-400.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:block;src:url('fonts/bevietnampro-vietnamese-500.woff2') format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:block;src:url('fonts/bevietnampro-latin-ext-500.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:500;font-display:block;src:url('fonts/bevietnampro-latin-500.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url('fonts/bevietnampro-vietnamese-600.woff2') format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url('fonts/bevietnampro-latin-ext-600.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:600;font-display:block;src:url('fonts/bevietnampro-latin-600.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:700;font-display:block;src:url('fonts/bevietnampro-vietnamese-700.woff2') format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:700;font-display:block;src:url('fonts/bevietnampro-latin-ext-700.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+      @font-face{font-family:'Be Vietnam Pro';font-style:normal;font-weight:700;font-display:block;src:url('fonts/bevietnampro-latin-700.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
+      html,
+      body {
         margin: 0;
         padding: 0;
         width: 1920px;
         height: 1080px;
-        background-color: #f2f2f2;
+        background-color: #1a1a2e;
         overflow: hidden;
-        font-family: "Helvetica", Arial, sans-serif;
       }
 
-      #master-root {
+      #root {
+        position: relative;
         width: 1920px;
         height: 1080px;
-        position: relative;
+        background-color: #1a1a2e;
+        font-family: "Be Vietnam Pro", sans-serif;
       }
 
-      .background-grid {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      /* A-roll styling */
-      #short_mag_cut_frame {
-        position: absolute;
-        border-radius: 8px; /* Required */
-        z-index: 1;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        background: #000;
-      }
-
-      #short_mag_cut,
-      #short_mag_cut_frame > img.__render_frame__,
-      #short_mag_cut_frame > img.__preview_render_frame__ {
+      /* ---------- Persistent background ---------- */
+      .bg {
         position: absolute;
         inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-      }
-
-      /* Overlay layers */
-      .overlay-layer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        z-index: 0;
         pointer-events: none;
       }
+      .glow {
+        position: absolute;
+        width: 1400px;
+        height: 1400px;
+        top: -420px;
+        right: -360px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 136, 238, 0.32) 0%,
+          rgba(0, 85, 187, 0.14) 38%,
+          rgba(26, 26, 46, 0) 68%
+        );
+        transform-origin: center;
+      }
+      .glow-2 {
+        position: absolute;
+        width: 1100px;
+        height: 1100px;
+        bottom: -440px;
+        left: -300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(246, 236, 210, 0.1) 0%,
+          rgba(246, 236, 210, 0.04) 42%,
+          rgba(26, 26, 46, 0) 70%
+        );
+      }
+      .vignette {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 46%,
+          rgba(26, 26, 46, 0) 52%,
+          rgba(10, 10, 22, 0.55) 100%
+        );
+      }
+      .ghost {
+        position: absolute;
+        left: -90px;
+        bottom: -130px;
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 540px;
+        line-height: 0.8;
+        letter-spacing: -0.04em;
+        color: rgba(232, 244, 255, 0.05);
+        white-space: nowrap;
+      }
+      .corner {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border-color: rgba(0, 136, 238, 0.55);
+        border-style: solid;
+        border-width: 0;
+      }
+      .corner.tl {
+        top: 64px;
+        left: 64px;
+        border-top-width: 2px;
+        border-left-width: 2px;
+      }
+      .corner.br {
+        bottom: 64px;
+        right: 64px;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+      }
 
-      #intro-comp {
+      /* ---------- Scenes ---------- */
+      .scene {
+        position: absolute;
+        inset: 0;
+      }
+      #s1 {
+        z-index: 1;
+      }
+      #s2 {
         z-index: 2;
       }
-      #graphics-comp {
+      #s3 {
         z-index: 3;
       }
-      #captions-comp {
-        z-index: 4;
+      .scene-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+
+      /* Scene 1 — wordmark */
+      .s1-inner {
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 180px;
+        gap: 30px;
+      }
+      .badge {
+        display: inline-block;
+        background: #0088ee;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        padding: 10px 22px;
+        border-radius: 4px;
+      }
+      .wordmark {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 158px;
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        color: #fdfaf5;
+        margin: 0;
+      }
+      .wordmark .accent {
+        color: #38a9ff;
+      }
+      .rule {
+        height: 3px;
+        width: 380px;
+        background: #0088ee;
+        transform-origin: left center;
+      }
+      .meta {
+        font-size: 23px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #f6ecd2;
+        font-weight: 500;
+      }
+
+      /* Scene 2 — tagline */
+      .s2-inner {
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 180px;
+        gap: 34px;
+      }
+      .s2-eyebrow-row {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .vbar {
+        width: 5px;
+        height: 64px;
+        background: #0088ee;
+        transform-origin: top center;
+      }
+      .eyebrow {
+        font-size: 24px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: #f6ecd2;
+        font-weight: 600;
+      }
+      .tagline {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 82px;
+        line-height: 1.14;
+        letter-spacing: -0.02em;
+        color: #fdfaf5;
+        max-width: 1320px;
+        margin: 0;
+      }
+      .tagline .hl {
+        color: #38a9ff;
+      }
+      .subline {
+        font-size: 31px;
+        line-height: 1.5;
+        color: #efe6cf;
+        font-weight: 400;
+        max-width: 1100px;
+      }
+
+      /* Scene 3 — lockup */
+      .s3-inner {
+        justify-content: center;
+        align-items: center;
+        padding: 0 160px;
+        gap: 26px;
+        text-align: center;
+      }
+      .s3-mark {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 104px;
+        line-height: 1;
+        letter-spacing: -0.025em;
+        color: #fdfaf5;
+        margin: 0;
+      }
+      .s3-mark .accent {
+        color: #38a9ff;
+      }
+      .s3-tag {
+        font-size: 28px;
+        letter-spacing: 0.04em;
+        color: #f6ecd2;
+        font-weight: 400;
+      }
+      .s3-rule {
+        height: 2px;
+        width: 240px;
+        background: #0088ee;
+        transform-origin: center;
+        margin: 8px 0;
+      }
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        font-size: 22px;
+        letter-spacing: 0.06em;
+        color: #e8f4ff;
+        font-weight: 500;
+      }
+      .social .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #0088ee;
+        display: inline-block;
+      }
+      .web {
+        font-size: 24px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #f6ecd2;
+        font-weight: 600;
+        margin-top: 6px;
       }
     </style>
   </head>
   <body>
     <div
-      id="master-root"
-      data-composition-id="master"
+      id="root"
+      data-composition-id="deaitinh-intro"
       data-width="1920"
       data-height="1080"
       data-start="0"
-      data-duration="10"
+      data-duration="12"
     >
-      <!-- Background Grid -->
-      <img id="bg-grid" class="background-grid" src="assets/swiss-grid.svg" alt="Grid" />
+      <!-- Persistent background -->
+      <div class="bg" data-layout-ignore>
+        <div class="ghost" aria-hidden="true">AI</div>
+        <div class="glow"></div>
+        <div class="glow-2"></div>
+        <div class="vignette"></div>
+        <div class="corner tl"></div>
+        <div class="corner br"></div>
+      </div>
 
-      <!-- Intro Sub-composition -->
-      <div
-        id="intro-comp"
-        class="overlay-layer"
-        data-composition-id="intro"
-        data-composition-src="compositions/intro.html"
-        data-start="0"
-        data-duration="1.86"
-        data-track-index="2"
-      ></div>
+      <!-- Scene 1: Wordmark -->
+      <div id="s1" class="scene clip" data-start="0" data-duration="4.4" data-track-index="1">
+        <div class="scene-inner s1-inner" data-layout-allow-overflow>
+          <span class="badge">AI thực chiến</span>
+          <h1 class="wordmark">Để <span class="accent">AI</span> Tính</h1>
+          <div class="rule"></div>
+          <div class="meta">deaitinh.com</div>
+        </div>
+      </div>
 
-      <!-- Graphics Sub-composition -->
-      <div
-        id="graphics-comp"
-        class="overlay-layer"
-        data-composition-id="graphics"
-        data-composition-src="compositions/graphics.html"
-        data-start="0"
-        data-duration="10"
-        data-track-index="3"
-      ></div>
+      <!-- Scene 2: Tagline -->
+      <div id="s2" class="scene clip" data-start="4.0" data-duration="4.4" data-track-index="2">
+        <div class="scene-inner s2-inner" data-layout-allow-overflow>
+          <div class="s2-eyebrow-row">
+            <div class="vbar"></div>
+            <div class="eyebrow">Định vị</div>
+          </div>
+          <h2 class="tagline">AI thực chiến cho người làm <span class="hl">truyền thông</span></h2>
+          <div class="subline">
+            Chuyên gia AI ứng dụng thực chiến · hơn 30 năm báo chí và marketing
+          </div>
+        </div>
+      </div>
 
-      <!-- Captions Sub-composition -->
-      <div
-        id="captions-comp"
-        class="overlay-layer"
-        data-composition-id="captions"
-        data-composition-src="compositions/captions.html"
+      <!-- Scene 3: Lockup + social -->
+      <div id="s3" class="scene clip" data-start="8.0" data-duration="4.0" data-track-index="3">
+        <div class="scene-inner s3-inner" data-layout-allow-overflow>
+          <h1 class="s3-mark">Để <span class="accent">AI</span> Tính</h1>
+          <div class="s3-tag">AI thực chiến cho người làm truyền thông</div>
+          <div class="s3-rule"></div>
+          <div class="social">
+            <span>facebook.com/deaitinh</span>
+            <span class="dot"></span>
+            <span>youtube.com/@deaitinh</span>
+            <span class="dot"></span>
+            <span>tiktok.com/@deaitinh</span>
+          </div>
+          <div class="web">deaitinh.com</div>
+        </div>
+      </div>
+
+      <!-- Background music -->
+      <audio
+        id="bgm"
         data-start="0"
-        data-duration="10"
-        data-track-index="4"
-      ></div>
+        data-duration="12"
+        data-track-index="5"
+        src="assets/intro-music.wav"
+        data-volume="0.9"
+      ></audio>
 
       <script>
         window.__timelines = window.__timelines || {};
+        const tl = gsap.timeline({ paused: true });
 
-        const masterTL = gsap.timeline({ paused: true });
-        const v = document.getElementById("short_mag_cut_frame");
+        /* ---------- Ambient background (seekable, finite) ---------- */
+        tl.to(".glow", { xPercent: -7, yPercent: 8, scale: 1.14, duration: 6, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0);
+        tl.to(".glow-2", { xPercent: 10, yPercent: -6, duration: 6, yoyo: true, repeat: 1, ease: "sine.inOut" }, 0);
+        tl.fromTo(".ghost", { xPercent: 0, opacity: 0.35 }, { xPercent: 5, opacity: 1, duration: 12, ease: "none" }, 0);
 
-        // --- A-ROLL MOVEMENT (Structured Swiss Layout) ---
+        /* ===================== SCENE 1 (0 - 4.4) ===================== */
+        tl.fromTo(".badge", { opacity: 0, y: -28 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+        tl.fromTo(".wordmark", { opacity: 0, y: 56 }, { opacity: 1, y: 0, duration: 0.95, ease: "expo.out" }, 0.34);
+        tl.fromTo(".rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, 0.8);
+        tl.fromTo(".meta", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.55, ease: "sine.out" }, 1.0);
+        // crossfade out (the transition itself)
+        tl.to(".s1-inner", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 4.0);
 
-        // 1. Entrance (0-1.86s): Slide in from left, settle centered for Intro
-        masterTL.fromTo(
-          v,
-          { x: -1000, y: 120, width: 960, height: 840 },
-          { x: 480, y: 120, width: 960, height: 840, duration: 0.8, ease: "power2.out" },
-          0,
-        );
+        /* ===================== SCENE 2 (4.0 - 8.4) ===================== */
+        tl.fromTo(".vbar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power3.out" }, 4.2);
+        tl.fromTo(".eyebrow", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 4.32);
+        tl.fromTo(".tagline", { opacity: 0, y: 54 }, { opacity: 1, y: 0, duration: 0.95, ease: "expo.out" }, 4.45);
+        tl.fromTo(".subline", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }, 4.95);
+        // crossfade out
+        tl.to(".s2-inner", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 8.0);
 
-        // 2. Stat 1 (1.86s - 4.68s): Move to right side (Graphic is on left)
-        masterTL.to(
-          v,
-          {
-            x: 1080,
-            y: 120,
-            width: 720,
-            height: 720,
-            duration: 0.25,
-            ease: "expo.out",
-          },
-          1.86,
-        );
+        /* ===================== SCENE 3 (8.0 - 12.0) ===================== */
+        tl.fromTo(".s3-mark", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.85, ease: "power3.out" }, 8.2);
+        tl.fromTo(".s3-tag", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.55, ease: "sine.out" }, 8.55);
+        tl.fromTo(".s3-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 8.7);
+        tl.fromTo(".social span", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.07 }, 8.9);
+        tl.fromTo(".web", { opacity: 0, letterSpacing: "0.05em" }, { opacity: 1, letterSpacing: "0.22em", duration: 0.6, ease: "sine.out" }, 9.2);
+        // final fade-out (allowed on last scene)
+        tl.to(".s3-inner", { opacity: 0, duration: 0.7, ease: "sine.in" }, 11.3);
 
-        // 3. Stat 2 (4.68s - 8.88s): Stay right, zoom in slightly
-        masterTL.to(
-          v,
-          {
-            x: 1080,
-            y: 60,
-            width: 780,
-            height: 780,
-            duration: 0.25,
-            ease: "expo.out",
-          },
-          4.68,
-        );
-
-        // 4. Stat 3 (8.88s - 14.2s): Move to left side (Graphic is on right)
-        masterTL.to(
-          v,
-          {
-            x: 120,
-            y: 120,
-            width: 720,
-            height: 720,
-            duration: 0.25,
-            ease: "expo.out",
-          },
-          8.88,
-        );
-
-        // 5. Conclusion (14.2s - 16.04s): Center large
-        masterTL.to(
-          v,
-          {
-            x: 240,
-            y: 60,
-            width: 1440,
-            height: 810,
-            duration: 0.5,
-            ease: "expo.out",
-          },
-          14.2,
-        );
-
-        window.__timelines["master"] = masterTL;
+        window.__timelines["deaitinh-intro"] = tl;
       </script>
     </div>
-
-    <!-- A-roll Video (direct child of body to avoid video_nested_in_timed_element) -->
-    <div id="short_mag_cut_frame">
-      
-    </div>
-    
   </body>
 </html>
