@@ -322,10 +322,6 @@
       <!-- Scene 2: Tagline -->
       <div id="s2" class="scene clip" data-start="4.0" data-duration="4.4" data-track-index="2">
         <div class="scene-inner s2-inner" data-layout-allow-overflow>
-          <div class="s2-eyebrow-row">
-            <div class="vbar"></div>
-            <div class="eyebrow">Định vị</div>
-          </div>
           <h2 class="tagline">AI thực chiến cho người làm <span class="hl">truyền thông</span></h2>
           <div class="subline">
             Chuyên gia AI ứng dụng thực chiến · hơn 30 năm báo chí và marketing
@@ -378,10 +374,8 @@
         tl.to(".s1-inner", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 4.0);
 
         /* ===================== SCENE 2 (4.0 - 8.4) ===================== */
-        tl.fromTo(".vbar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power3.out" }, 4.2);
-        tl.fromTo(".eyebrow", { opacity: 0, x: -26 }, { opacity: 1, x: 0, duration: 0.5, ease: "power2.out" }, 4.32);
-        tl.fromTo(".tagline", { opacity: 0, y: 54 }, { opacity: 1, y: 0, duration: 0.95, ease: "expo.out" }, 4.45);
-        tl.fromTo(".subline", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }, 4.95);
+        tl.fromTo(".tagline", { opacity: 0, y: 54 }, { opacity: 1, y: 0, duration: 0.95, ease: "expo.out" }, 4.3);
+        tl.fromTo(".subline", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.6, ease: "sine.out" }, 4.85);
         // crossfade out
         tl.to(".s2-inner", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 8.0);
 
