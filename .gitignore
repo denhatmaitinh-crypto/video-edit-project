@@ -1,0 +1,9 @@
+# Không commit file media (nặng, không hợp với git). Chỉ giữ script & README.
+input/*
+output/*
+!input/README.md
+!output/README.md
+
+# File tạm
+.DS_Store
+*.log
