@@ -4,6 +4,10 @@ output/*
 !input/README.md
 !output/README.md
 
+# Tài nguyên: giữ font tái dùng, bỏ qua nhạc/âm thanh tạm (tự tổng hợp lại được)
+assets/*.wav
+assets/*.mp3
+
 # File tạm
 .DS_Store
 *.log

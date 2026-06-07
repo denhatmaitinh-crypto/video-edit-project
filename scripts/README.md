@@ -31,6 +31,7 @@ chmod +x scripts/*.sh        # cấp quyền chạy cho các script
 | `watermark.sh` | Chèn logo | `./scripts/watermark.sh input/1.mp4 input/logo.png tr` |
 | `audio.sh` | Nhạc nền / âm lượng / tách tiếng / fade | `./scripts/audio.sh music input/1.mp4 input/nhac.mp3` |
 | `effects.sh` | Tốc độ / lọc màu / fade hình / xoay | `./scripts/effects.sh color input/1.mp4 cinematic` |
+| `reel.sh` | **Gói mặc định**: polish + motion graphic + nhạc nền an toàn + SFX | `./scripts/reel.sh input/1.mp4 "MANUS" "AI tự động hoá công việc"` |
 
 > Mỗi script đều có hướng dẫn chi tiết và các tùy chọn nâng cao ghi ở **đầu file**.
 > Chạy script không kèm tham số để xem cú pháp.
